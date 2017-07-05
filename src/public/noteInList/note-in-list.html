@@ -1,0 +1,46 @@
+<h3 id="carsTitle">Note's List
+	<span class="pull-right">
+	  <button type="button" class="btn btn-success btn-lg" ui-sref="public.addNotes">+ Add Note</button>
+	</span>
+</h3>
+
+<h4 ng-show="notesCtrl.notes.notes.length===0" class="text-center">No notes here, click "+addNote" to add Note</h4>
+<div id="borderTable" class="container" ng-if="notesCtrl.notes.notes.length"> 
+<table class="table table-hover table-bordered table-striped">
+	<thead>
+		 <tr>
+		    <th class="col-xs-1 hidden-xs">#</th>
+		    <th class="col-xs-1">Car</th>
+		    <th class="col-xs-2">Date</th>
+		    <th class="col-xs-1 hidden-xs">Km</th>
+		    <th class="col-xs-1 hidden-xs">Pays</th>
+		    <th class="col-xs-5">Works</th>
+		    <th class="col-xs-1 hidden-xs">Actions</th>
+		 </tr>              
+	</thead>
+<tbody>	
+	<tr ng-repeat="noteList in notesCtrl.notes.notes">
+	    <th class="hidden-xs">{{$index + 1}}</th>
+	    <th><a ui-sref="public.oneCarNotes({id: noteList.car.id})">{{noteList.car.car_type}}_{{noteList.car.gov_number}}</a></th>
+	    <th>{{notesCtrl.reFormat(noteList.date) | date : 'mediumDate'}}</th>
+	    <th>{{noteList.km}}</th>
+		<th>{{noteList.pays | currency : 'UAH ' }}</th>
+		<th>{{noteList.works}}</th>
+	    <th class="hidden-xs">                	
+	        	<button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false" ng-click="notesCtrl.onRemove(noteList.id, $index);">
+			    <span class="glyphicon glyphicon-trash"></span>
+			  </button>
+			  <button  
+			  class="btn btn-primary" 
+			  aria-haspopup="true" 
+			  aria-expanded="false" 
+			  ui-sref="public.editNotes({id: noteList.id})"
+			  >
+			    <span class="glyphicon glyphicon-pencil">
+			    </span>
+			  </button>					    	
+		</th>
+	</tr>
+</tbody>
+</table>
+</div>

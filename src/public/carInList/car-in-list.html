@@ -1,0 +1,35 @@
+<h3 id="carsTitle">Car's List
+	<span class="pull-right">
+	  <button type="button" class="btn btn-success btn-lg" ui-sref="public.addCar">+ Add Car</button>
+	</span>
+</h3>
+<h3 ng-show="!carsCtrl.car2.length===0" class="text-center">No cars here</h3>
+<div id="borderTable" class="container" ng-if="carsCtrl.car2.length"> 
+<table class="table table-hover table-bordered table-striped">
+	<thead>
+		 <tr>
+		    <th class="col-xs-1 hidden-xs">#</th>
+		    <th class="col-xs-2">Gov Number</th>
+		    <th class="col-xs-2">Car Type</th>
+		    <th class="col-xs-6">Info</th>
+		    <th class="col-xs-1 hidden-xs">Actions</th>
+		 </tr>              
+	</thead>
+<tbody>	
+	<tr ng-repeat="carList in carsCtrl.car2">
+	    <th class="hidden-xs">{{$index + 1}}</th>
+	    <th><a ui-sref="public.oneCarNotes({id: carList.id})">{{carList.gov_number}}</a></th>
+	    <th>{{carList.car_type}}</th>
+	    <th>{{carList.gov_number_trailer}}</th>
+	    <th class="hidden-xs">                	
+	        	<button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false" ng-click="carsCtrl.onRemove2(carList.id, $index);">
+			    <span class="glyphicon glyphicon-trash"></span>
+			  </button>
+			  <button type="button" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" ui-sref="public.editCar({id: carList.id})">
+			    <span class="glyphicon glyphicon-pencil"></span>
+			  </button>					    	
+		</th>
+	</tr>
+</tbody>
+</table>
+</div>

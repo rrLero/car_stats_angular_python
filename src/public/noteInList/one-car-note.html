@@ -1,0 +1,58 @@
+<h2>Car {{noteCtrl.notes.notes[0].car.car_type}} {{noteCtrl.notes.notes[0].car.gov_number}}</h1>
+<hr class="my-4">
+<br>
+
+<div class="container" ng-hide="noteCtrl.notes.notes.length===0">
+<div class="container">
+<dl class="row col-xs-8">
+	<dt class="col-xs-6">GovNumber:</dt>
+		<dd class="col-xs-6">{{noteCtrl.notes.notes[0].car.gov_number}}</dd>
+	<dt class="col-xs-6">CarType:</dt>
+		<dd class="col-xs-6">{{noteCtrl.notes.notes[0].car.car_type}}</dd>
+	<dt class="col-xs-6">Description:</dt>
+		<dd class="col-xs-6">{{noteCtrl.notes.notes[0].car.gov_number_trailer}}</dd>
+	<dt class="col-xs-6">Total Run:</dt>
+		<dd class="col-xs-6">{{noteCtrl.notes.run}}</dd>
+	<dt class="col-xs-6">Payments:</dt>
+		<dd class="col-xs-6">{{noteCtrl.notes.payments | currency : 'UAH '}}</dd>
+
+</dl>
+<div class="row col-xs-4 align-bottom">
+<div class="input-group input-daterange">
+    <input type="date" class="form-control" value="2012-04-05" ng-model="noteCtrl.date_from">
+    <input type="date" class="form-control" ng-model="noteCtrl.date_to">
+	<div class="input-group-addon">
+    <button ng-click="noteCtrl.getNotesByDate(noteCtrl.notes.notes[0].car.id, noteCtrl.date_to, noteCtrl.date_from)">Apply</button>	
+	</div>
+</div>
+
+</div>
+</div>
+
+
+
+<div id="borderTable" class="container"> 
+<table class="table table-hover table-bordered table-striped">
+	<thead>
+		 <tr>
+		    <th class="col-xs-1 hidden-xs">#</th>
+		    <th class="col-xs-2">Date</th>
+		    <th class="col-xs-1 hidden-xs">Km</th>
+		    <th class="col-xs-1 hidden-xs">Pays</th>
+		    <th class="col-xs-4">Works</th>
+		 </tr>              
+	</thead>
+<tbody>	
+	<tr ng-repeat="noteList in noteCtrl.notes.notes">
+	    <th class="hidden-xs">{{$index + 1}}</th>
+	    <th>{{noteCtrl.reFormat(noteList.date) | date : 'mediumDate'}}</th>
+	    <th>{{noteList.km}}</th>
+		<th>{{noteList.pays | currency : 'UAH ' }}</th>
+		<th>{{noteList.works}}</th>
+	</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 ng-show="noteCtrl.notes.notes.length===0">No notes by this Car</h3>

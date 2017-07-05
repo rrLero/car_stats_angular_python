@@ -1,0 +1,81 @@
+<legend class="text-center">Edit Note</legend>
+<form name='regForm' novalidate>
+<div class="form-group row">
+  <label class="col-xs-1 col-form-label">Car</label>
+  <div class="col-xs-11">
+    <select class="form-control"             
+            name="car"
+            required
+            ng-model="note.car"
+            ng-options="car.gov_number for car in note.cars"
+            >
+            <option 
+            		ng-value="car.id"
+            		>{{car.car_type}} {{car.gov_number}}
+            </option>    	
+    </select>
+      <span
+        ng-if="(regForm.car.$error.required) && regForm.car.$touched">
+        Field required
+      </span>    
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-xs-1 col-form-label">Date</label>
+  <div class="col-xs-4">
+    <input  class="form-control" 
+            type="date" 
+            name="date"
+            ng-model="note.date"
+            required
+            >
+           <span ng-if="regForm.date.$invalid && regForm.date.$touched">
+            Field required
+          </span>
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-xs-1 col-form-label">Km</label>
+  <div class="col-xs-11">
+    <input  class="form-control"
+    		type="number" 
+            name="km"
+            ng-model="note.km"
+            placeholder="Kilometers"
+            required>
+          <span ng-if="regForm.km.$invalid && regForm.km.$touched">
+            Field required
+          </span>
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-xs-1 col-form-label">Pays</label>
+  <div class="col-xs-11">
+    <input  class="form-control" 
+            name="pays"
+            type="number"
+            ng-model="note.pays"
+            placeholder="Pays">
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-xs-1 col-form-label">Works</label>
+  <div class="col-xs-11">
+    <textarea class="form-control" 
+            name="works"
+            ng-model="note.works"
+            placeholder="Works"
+            required>         
+    </textarea> 
+          <span ng-if="regForm.works.$invalid && regForm.works.$touched">
+            Field required
+          </span>
+  </div>
+</div>
+<button
+    ng-disabled="regForm.$invalid"
+    ng-click="note.submit()"
+    class="btn btn-success btn-md">Update
+</button>
+</form>
