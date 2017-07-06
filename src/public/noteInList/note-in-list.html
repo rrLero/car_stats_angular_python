@@ -23,8 +23,8 @@
 	    <th class="hidden-xs">{{$index + 1}}</th>
 	    <th><a ui-sref="public.oneCarNotes({id: noteList.car.id})">{{noteList.car.car_type}}_{{noteList.car.gov_number}}</a></th>
 	    <th>{{notesCtrl.reFormat(noteList.date) | date : 'mediumDate'}}</th>
-	    <th>{{noteList.km}}</th>
-		<th>{{noteList.pays | currency : 'UAH ' }}</th>
+	    <th class="hidden-xs">{{noteList.km}}</th>
+		<th class="hidden-xs">{{noteList.pays | currency : 'UAH ' }}</th>
 		<th>{{noteList.works}}</th>
 	    <th class="hidden-xs">                	
 	        	<button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false" ng-click="notesCtrl.onRemove(noteList.id, $index);">

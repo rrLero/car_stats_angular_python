@@ -4,20 +4,20 @@
 
 <div class="container" ng-hide="noteCtrl.notes.notes.length===0">
 <div class="container">
-<dl class="row col-xs-8">
-	<dt class="col-xs-6">GovNumber:</dt>
-		<dd class="col-xs-6">{{noteCtrl.notes.notes[0].car.gov_number}}</dd>
-	<dt class="col-xs-6">CarType:</dt>
-		<dd class="col-xs-6">{{noteCtrl.notes.notes[0].car.car_type}}</dd>
-	<dt class="col-xs-6">Description:</dt>
-		<dd class="col-xs-6">{{noteCtrl.notes.notes[0].car.gov_number_trailer}}</dd>
-	<dt class="col-xs-6">Total Run:</dt>
-		<dd class="col-xs-6">{{noteCtrl.notes.run}}</dd>
-	<dt class="col-xs-6">Payments:</dt>
-		<dd class="col-xs-6">{{noteCtrl.notes.payments | currency : 'UAH '}}</dd>
+<dl class="row col-sm-8">
+	<dt class="col-sm-6">GovNumber:</dt>
+		<dd class="col-sm-6">{{noteCtrl.notes.notes[0].car.gov_number}}</dd>
+	<dt class="col-sm-6">CarType:</dt>
+		<dd class="col-sm-6">{{noteCtrl.notes.notes[0].car.car_type}}</dd>
+	<dt class="col-sm-6">Description:</dt>
+		<dd class="col-sm-6">{{noteCtrl.notes.notes[0].car.gov_number_trailer}}</dd>
+	<dt class="col-sm-6">Total Run:</dt>
+		<dd class="col-sm-6">{{noteCtrl.notes.run}}</dd>
+	<dt class="col-sm-6">Payments:</dt>
+		<dd class="col-sm-6">{{noteCtrl.notes.payments | currency : 'UAH '}}</dd>
 
 </dl>
-<div class="row col-xs-4 align-bottom">
+<div class="row col-sm-4 align-bottom">
 <div class="input-group input-daterange">
     <input type="date" class="form-control" value="2012-04-05" ng-model="noteCtrl.date_from">
     <input type="date" class="form-control" ng-model="noteCtrl.date_to">
@@ -46,8 +46,8 @@
 	<tr ng-repeat="noteList in noteCtrl.notes.notes">
 	    <th class="hidden-xs">{{$index + 1}}</th>
 	    <th>{{noteCtrl.reFormat(noteList.date) | date : 'mediumDate'}}</th>
-	    <th>{{noteList.km}}</th>
-		<th>{{noteList.pays | currency : 'UAH ' }}</th>
+	    <th class="col-xs-1 hidden-xs">{{noteList.km}}</th>
+		<th class="col-xs-1 hidden-xs">{{noteList.pays | currency : 'UAH ' }}</th>
 		<th>{{noteList.works}}</th>
 	</tr>
 </tbody>
