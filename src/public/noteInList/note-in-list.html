@@ -11,7 +11,7 @@
 		 <tr>
 		    <th class="col-xs-1 hidden-xs">#</th>
 		    <th class="col-xs-1">Car</th>
-		    <th class="col-xs-2">Date</th>
+		    <th class="col-xs-2 hidden-xxs">Date</th>
 		    <th class="col-xs-1 hidden-xs">Km</th>
 		    <th class="col-xs-1 hidden-xs">Pays</th>
 		    <th class="col-xs-5">Works</th>
@@ -22,7 +22,7 @@
 	<tr ng-repeat="noteList in notesCtrl.notes.notes">
 	    <th class="hidden-xs">{{$index + 1}}</th>
 	    <th><a ui-sref="public.oneCarNotes({id: noteList.car.id})">{{noteList.car.car_type}}_{{noteList.car.gov_number}}</a></th>
-	    <th>{{notesCtrl.reFormat(noteList.date) | date : 'mediumDate'}}</th>
+	    <th class="hidden-xxs">{{notesCtrl.reFormat(noteList.date) | date : 'mediumDate'}}</th>
 	    <th class="hidden-xs">{{noteList.km}}</th>
 		<th class="hidden-xs">{{noteList.pays | currency : 'UAH ' }}</th>
 		<th>{{noteList.works}}</th>

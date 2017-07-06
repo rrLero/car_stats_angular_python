@@ -11,7 +11,7 @@
 		    <th class="col-xs-1 hidden-xs">#</th>
 		    <th class="col-xs-2">Gov Number</th>
 		    <th class="col-xs-2">Car Type</th>
-		    <th class="col-xs-6">Info</th>
+		    <th class="col-xs-6 hidden-xxs">Info</th>
 		    <th class="col-xs-1 hidden-xs">Actions</th>
 		 </tr>              
 	</thead>
@@ -20,7 +20,7 @@
 	    <th class="hidden-xs">{{$index + 1}}</th>
 	    <th><a ui-sref="public.oneCarNotes({id: carList.id})">{{carList.gov_number}}</a></th>
 	    <th>{{carList.car_type}}</th>
-	    <th>{{carList.gov_number_trailer}}</th>
+	    <th class="hidden-xxs">{{carList.gov_number_trailer}}</th>
 	    <th class="hidden-xs">                	
 	        	<button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false" ng-click="carsCtrl.onRemove2(carList.id, $index);">
 			    <span class="glyphicon glyphicon-trash"></span>
