@@ -13,7 +13,7 @@ function routeConfig ($stateProvider) {
   $stateProvider
     .state('public', {
       abstract: true,
-      templateUrl: 'src/public/public.html'
+      templateUrl: 'src/public/public.html',     
     })
     .state('public.home', {
       url: '/',
@@ -39,6 +39,12 @@ function routeConfig ($stateProvider) {
       resolve: {
         notes: ['notesListService', '$stateParams', function (notesListService, $stateParams) {
           return notesListService.getOneCarNote($stateParams.id)
+        }],
+        cars: ['carsListService', '$stateParams', function (carsListService, $stateParams) {
+          return carsListService.getCarsList()
+        }],
+        id: ['$stateParams', function ($stateParams) {
+          return $stateParams.id
         }]
       }
     })
@@ -90,6 +96,11 @@ function routeConfig ($stateProvider) {
         }]
       }      
     })
-    ;
+    .state('public.login', {
+      url: '/login',
+      templateUrl: 'src/admin/login/login.html',
+      controller: 'LoginController',
+      controllerAs: '$ctrl',
+    });
 }
 })();

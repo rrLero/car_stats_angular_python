@@ -6,18 +6,18 @@
 angular.module('common')
 .service('notesListService', notesListService)
 
-notesListService.$inject = ['$http', 'ApiPath', 'token', '$location'];
-function notesListService($http, ApiPath, token, $location) {
+notesListService.$inject = ['$http', 'ApiPath', '$location'];
+function notesListService($http, ApiPath, $location) {
 	var service = this;
 
 	service.getNotesList = function () {
-		return $http.get(ApiPath + '/notes' + token).then(function (response) {
+		return $http.get(ApiPath + '/notes').then(function (response) {
 			return response.data
 		})
 	};
 
 	service.removeNote = function (idNote) {
-		return $http.delete(ApiPath + '/notes/' + idNote + token)
+		return $http.delete(ApiPath + '/notes/' + idNote)
 					.then(function (response) {
 						console.log(response.data)
 						return response.data
@@ -32,13 +32,13 @@ function notesListService($http, ApiPath, token, $location) {
 			'date_to': date_to,
 			'date_from': date_from
 			}
-		return $http.get(ApiPath + '/notes/' + carId + token, config)
+		return $http.get(ApiPath + '/notes/' + carId, config)
 					.then(function (response) {
 						return response.data
 					})
 	};
 	service.addNewNote = function (json, carId) {
-		return $http.post(ApiPath + '/notes/'+ carId + token, json)
+		return $http.post(ApiPath + '/notes/'+ carId, json)
 					.then(function (response) {
 						console.log(response.data);
 						$location.url('/notesList')
@@ -54,7 +54,7 @@ function notesListService($http, ApiPath, token, $location) {
 		return array
 	};
 	service.editNote = function (json, id) {
-		return $http.put(ApiPath + '/notes/' + id + token, json)
+		return $http.put(ApiPath + '/notes/' + id, json)
 					.then(function (response) {
 						console.log(response.data);
 						$location.url('/notesList')

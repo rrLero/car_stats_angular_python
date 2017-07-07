@@ -38,10 +38,6 @@ h2 {
 #header-nav a:hover {
 	color: white;  
 }
-
-#nav-list a span {
-  
-}
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
   border:1px solid white;
 }
@@ -84,6 +80,21 @@ table tbody * {
 #carsTitle, #notesTitle {
   margin-bottom: 25px;
   margin-top: 0px;
+}
+
+#logOut a {
+  position: relative;
+  display: block;
+  padding: 15px 15px;
+  color: #9d9d9d;
+}
+.login {
+    margin: 0 auto;
+    padding: 20px;
+}
+.login div:first-of-type {
+    width: 300px;
+    margin: 0 auto;
 }
 
 

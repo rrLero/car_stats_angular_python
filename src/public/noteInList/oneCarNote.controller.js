@@ -5,9 +5,12 @@
 angular.module('public')
 .controller('OneCarNoteController', OneCarNoteController)
 
-OneCarNoteController.$inject = ['notes', 'notesListService'];
-function OneCarNoteController(notes, notesListService) {
+OneCarNoteController.$inject = ['notes', 'notesListService', 'cars', 'id'];
+function OneCarNoteController(notes, notesListService, cars, id) {
 	var $ctrl = this;
+	$ctrl.cars = cars.filter(function (car) {
+		return car.id == id
+	})[0];
 	$ctrl.notes = notes;
 	$ctrl.date_to = new Date;
 	$ctrl.date_from = new Date;

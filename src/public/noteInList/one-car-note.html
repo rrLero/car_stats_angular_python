@@ -1,16 +1,16 @@
-<h2>Car {{noteCtrl.notes.notes[0].car.car_type}} {{noteCtrl.notes.notes[0].car.gov_number}}</h1>
+<h2>Car: {{noteCtrl.cars.car_type}} {{noteCtrl.cars.gov_number}}</h1>
 <hr class="my-4">
 <br>
 
-<div class="container" ng-hide="noteCtrl.notes.notes.length===0">
+<div class="container">
 <div class="container">
 <dl class="row col-sm-8">
 	<dt class="col-sm-6">GovNumber:</dt>
-		<dd class="col-sm-6">{{noteCtrl.notes.notes[0].car.gov_number}}</dd>
+		<dd class="col-sm-6">{{noteCtrl.cars.gov_number}}</dd>
 	<dt class="col-sm-6">CarType:</dt>
-		<dd class="col-sm-6">{{noteCtrl.notes.notes[0].car.car_type}}</dd>
+		<dd class="col-sm-6">{{noteCtrl.cars.car_type}}</dd>
 	<dt class="col-sm-6">Description:</dt>
-		<dd class="col-sm-6">{{noteCtrl.notes.notes[0].car.gov_number_trailer}}</dd>
+		<dd class="col-sm-6">{{noteCtrl.cars.gov_number_trailer}}</dd>
 	<dt class="col-sm-6">Total Run:</dt>
 		<dd class="col-sm-6">{{noteCtrl.notes.run}}</dd>
 	<dt class="col-sm-6">Payments:</dt>
@@ -22,7 +22,7 @@
     <input type="date" class="form-control" value="2012-04-05" ng-model="noteCtrl.date_from">
     <input type="date" class="form-control" ng-model="noteCtrl.date_to">
 	<div class="input-group-addon">
-    <button ng-click="noteCtrl.getNotesByDate(noteCtrl.notes.notes[0].car.id, noteCtrl.date_to, noteCtrl.date_from)">Apply</button>	
+    <button ng-click="noteCtrl.getNotesByDate(noteCtrl.cars.id, noteCtrl.date_to, noteCtrl.date_from)">Apply</button>	
 	</div>
 </div>
 
@@ -55,4 +55,3 @@
 </div>
 </div>
 
-<h3 ng-show="noteCtrl.notes.notes.length===0">No notes by this Car</h3>
