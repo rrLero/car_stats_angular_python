@@ -101,6 +101,6 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/admin/login/login.html',
       controller: 'LoginController',
       controllerAs: '$ctrl',
-    });
+    })
 }
 })();

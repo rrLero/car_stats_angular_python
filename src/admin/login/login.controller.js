@@ -11,6 +11,7 @@ function LoginController($state, LoginService, CurrentUserService, $rootScope, $
   $ctrl.username = '';
   $ctrl.password = '';
   $ctrl.error = '';
+  $ctrl.message = '';
 
   /**
    * Handles when user clicks the login button.
@@ -38,6 +39,14 @@ function LoginController($state, LoginService, CurrentUserService, $rootScope, $
   $ctrl.valid = function() {
     return ($ctrl.username !== '' && $ctrl.password !== '');
   };
+
+  $ctrl.createUser = function () {
+    LoginService.createUser($ctrl.username, $ctrl.password)
+                .then(function (response) {
+                  $ctrl.message = response;
+                })
+  }
+
 
 }
 })();

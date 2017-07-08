@@ -21,6 +21,18 @@ function LoginService($http, ApiPath, $rootScope, $cookies, $state) {
   service.getToken = function () {
     var token = $cookies.get('token')
     return token
+  };
+  service.createUser = function (username, password) {
+    var params = {
+      'user_name': username,
+      'password': password,
+    };
+    return $http.post(ApiPath + '/user', params)
+                .then(function (response) {
+                  return response.data.message
+                }, function (resolve) {
+                  return resolve.data.message;
+                });
   }
 }
 
