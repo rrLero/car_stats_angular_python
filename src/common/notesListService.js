@@ -9,6 +9,7 @@ angular.module('common')
 notesListService.$inject = ['$http', 'ApiPath', '$location'];
 function notesListService($http, ApiPath, $location) {
 	var service = this;
+	var dif = (new Date).getTimezoneOffset()*60;
 
 	service.getNotesList = function () {
 		return $http.get(ApiPath + '/notes').then(function (response) {
@@ -26,7 +27,7 @@ function notesListService($http, ApiPath, $location) {
 
 	service.getOneCarNote = function (carId, date_to, date_from) {
 		date_from = date_from || Date.now()/1000-2592000;
-		date_to = date_to || Date.now()/1000;
+		date_to = date_to || new Date()/1000+86400;
 		var config = {};
 		config.params = {
 			'date_to': date_to,

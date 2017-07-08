@@ -24,7 +24,10 @@ function NotesController(notesListService, title) {
 		notesListService.sendNoteToEditView(note)
 	}
 	$ctrl.reFormat = function (date) {	
-		return new Date(date)
+		var date2 = new Date();
+		var dif = date2.getTimezoneOffset()*60;
+		date2 = Date.parse(date) + dif;
+		return new Date(date2)
 	}
 }
 
