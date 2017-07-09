@@ -1,5 +1,5 @@
 (function() {
-"use strict";
+'use strict';
 
 angular.module('public')
 .service('CurrentUserService', CurrentUserService);
@@ -36,8 +36,5 @@ function CurrentUserService() {
   service.isAuthenticated = function() {
     return _accessToken !== '';
   };
-
 }
-
-
 })();

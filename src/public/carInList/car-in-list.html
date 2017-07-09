@@ -3,7 +3,7 @@
 	  <button type="button" class="btn btn-success btn-lg" ui-sref="public.addCar">+ Add Car</button>
 	</span>
 </h3>
-<h3 ng-show="!carsCtrl.car2.length===0" class="text-center">No cars here</h3>
+<h4 ng-show="carsCtrl.car2.length===0" class="text-center">No cars here, click "+addCar" to add car</h4>
 <div id="borderTable" class="container" ng-if="carsCtrl.car2.length"> 
 <table class="table table-hover table-bordered table-striped">
 	<thead>

@@ -43,9 +43,10 @@
             name="km"
             ng-model="note.km"
             placeholder="Kilometers"
-            required>
-          <span ng-if="regForm.km.$invalid && regForm.km.$touched">
-            Field required
+            required
+            maxlength="10">
+          <span ng-if="(regForm.km.$invalid || regForm.km.$error.maxlength)&& regForm.km.$touched">
+            Field required, not more 10 digits
           </span>
   </div>
 </div>
@@ -56,7 +57,11 @@
             name="pays"
             type="number"
             ng-model="note.pays"
-            placeholder="Pays">
+            placeholder="Pays"
+            maxlength="10">
+          <span ng-if="regForm.pays.$error.maxlength && regForm.pays.$touched">
+            not more 10 digits
+          </span>
   </div>
 </div>
 <div class="form-group row">

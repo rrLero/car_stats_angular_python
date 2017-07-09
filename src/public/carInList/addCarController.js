@@ -1,6 +1,5 @@
-(function () {
-
-"use strict";
+(function() {
+'use strict';
 
 angular.module('public')
 .controller('AddCarController', AddCarController);
@@ -9,7 +8,7 @@ AddCarController.$inject = ['carsListService', '$location']
 function AddCarController(carsListService, $location) {
   var car = this;
   var newCar = {};
-  car.submit = function () {
+  car.submit = function() {
      newCar = {	
      	'gov_number': car.gov_number, 
      	'car_type': car.car_type, 
@@ -18,5 +17,4 @@ function AddCarController(carsListService, $location) {
      carsListService.addNewCar(newCar);
   };
 }
-
 })();

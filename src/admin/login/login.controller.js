@@ -1,5 +1,4 @@
-(function () {
-
+(function() {
 'use strict';
 
 angular.module('public')
@@ -18,12 +17,11 @@ function LoginController($state, LoginService, CurrentUserService, $rootScope, $
    */
   $ctrl.login = function() {
     LoginService.getAccessToken($ctrl.username, $ctrl.password).then(function(accessToken) {
-
-      // If user went directly to login page, redirect to admin home
+          // If user went directly to login page, redirect to admin home
       if(!$state.params || !$state.params.toState) {
         var now = new Date();
         now.setDate(now.getDate()+7);
-        $cookies.put('token', accessToken, [{expires:now, path: "/"}]);
+        $cookies.put('token', accessToken, [{expires:now, path: '/'}]);
         $state.go('public.home');
       }
       else {
@@ -31,7 +29,7 @@ function LoginController($state, LoginService, CurrentUserService, $rootScope, $
       }
     }, function(response) {
       // Login failed
-      $ctrl.error = "Login Failed: Username and/or Password did not match.";
+      $ctrl.error = 'Login Failed: Username and/or Password did not match.';
     });
   };
 
@@ -40,13 +38,11 @@ function LoginController($state, LoginService, CurrentUserService, $rootScope, $
     return ($ctrl.username !== '' && $ctrl.password !== '');
   };
 
-  $ctrl.createUser = function () {
+  $ctrl.createUser = function() {
     LoginService.createUser($ctrl.username, $ctrl.password)
-                .then(function (response) {
+                .then(function(response) {
                   $ctrl.message = response;
                 })
   }
-
-
 }
 })();
