@@ -29,7 +29,7 @@ function LoginController($state, LoginService, CurrentUserService, $rootScope, $
       }
     }, function(response) {
       // Login failed
-      $ctrl.error = 'Login Failed: Username and/or Password did not match.';
+      $ctrl.error = response.data.message;
     });
   };
 
