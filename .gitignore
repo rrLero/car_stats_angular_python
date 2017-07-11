@@ -11,3 +11,5 @@
 node_modules/
 car_stats_angular_python.tar.gz
 composer.json
+.babelrc
+
