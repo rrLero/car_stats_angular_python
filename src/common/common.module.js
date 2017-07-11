@@ -5,4 +5,5 @@ angular.module('common', [])
 config.$inject = ['$httpProvider'];
 function config($httpProvider) {
 	$httpProvider.interceptors.push('loadingHttpInterceptor');
+    $httpProvider.interceptors.push('accessTokenHttpInterceptor');
 }

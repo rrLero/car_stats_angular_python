@@ -13,9 +13,9 @@ require('./src/public/public.routes.js');
 require('./src/admin/login/login.controller.js');
 require('./src/admin/login/log-out.component.js');
 
+require('./src/common/loading/loading.component.js');
 require('./src/common/loading/tokenHttpInterceptor.js');
 require('./src/common/loading/loading.interceptor.js');
-require('./src/common/loading/loading.component.js');
 
 require('./src/public/noteInList/notes.controller.js');
 require('./src/public/noteInList/oneCarNote.controller.js');
