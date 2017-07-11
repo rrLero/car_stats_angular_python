@@ -1,7 +1,7 @@
 angular
 	.module('public')
     .component('logout', {
-        templateUrl: 'src/app/admin/login/logout.html',
+        template: require('./logout.html'),
         controller: LogOutController,
     });
 

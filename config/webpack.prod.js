@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackChunkHash = require('webpack-chunk-hash');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
@@ -52,6 +53,9 @@ module.exports = webpackMerge(commonConfig, {
             filename: '[name].[chunkhash].css',
             allChunks: true
         }),
+        // new CopyWebpackPlugin([{
+        //     from: __dirname + '/src/public'
+        // }]),
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': JSON.stringify(ENV)

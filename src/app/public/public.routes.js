@@ -12,27 +12,27 @@ function routeConfig($stateProvider) {
     $stateProvider
         .state('public', {
             abstract: true,
-            templateUrl: 'src/app/public/public.html',
+            template: require('./public.html'),
         })
         .state('public.home', {
             url: '/',
-            templateUrl: 'src/app/public/home/home.html'
+            template: require('./home/home.html')
         })
         .state('public.carsList', {
             url: '/carsList',
-            templateUrl: 'src/app/public/carInList/car-in-list.html',
+            template: require('./carInList/car-in-list.html'),
             controller: 'CarsController',
             controllerAs: 'carsCtrl',
         })
         .state('public.notesList', {
             url: '/notesList',
-            templateUrl: 'src/app/public/noteInList/note-in-list.html',
+            template: require('./noteInList/note-in-list.html'),
             controller: 'NotesController',
             controllerAs: 'notesCtrl',
         })
         .state('public.oneCarNotes', {
             url: '/carsList/{id}/notes',
-            templateUrl: 'src/app/public/noteInList/one-car-note.html',
+            template: require('./noteInList/one-car-note.html'),
             controller: "OneCarNoteController",
             controllerAs: 'noteCtrl',
             resolve: {
@@ -49,13 +49,13 @@ function routeConfig($stateProvider) {
         })
         .state('public.addCar', {
             url: '/addCar',
-            templateUrl: 'src/app/public/carInList/addCar.html',
+            template: require('./carInList/addCar.html'),
             controller: 'AddCarController',
             controllerAs: 'car',
         })
         .state('public.addNotes', {
             url: '/addNote',
-            templateUrl: 'src/app/public/noteInList/addNote.html',
+            template: require('./noteInList/addNote.html'),
             controller: 'AddNoteController',
             controllerAs: 'note',
             resolve: {
@@ -66,7 +66,7 @@ function routeConfig($stateProvider) {
         })
         .state('public.editCar', {
             url: '/editCar/{id}',
-            templateUrl: 'src/app/public/carInList/editCar.html',
+            template: require('./carInList/editCar.html'),
             controller: 'EditCarController',
             controllerAs: 'car',
             resolve: {
@@ -80,7 +80,7 @@ function routeConfig($stateProvider) {
         })
         .state('public.editNotes', {
             url: '/editNotes/{id}',
-            templateUrl: 'src/app/public/noteInList/editNotes.html',
+            template: require('./noteInList/editNotes.html'),
             controller: 'EditNoteController',
             controllerAs: 'note',
             resolve: {
@@ -97,7 +97,7 @@ function routeConfig($stateProvider) {
         })
         .state('public.login', {
             url: '/login',
-            templateUrl: 'src/app/admin/login/login.html',
+            template: require('../admin/login/login.html'),
             controller: 'LoginController',
             controllerAs: '$ctrl',
         });
