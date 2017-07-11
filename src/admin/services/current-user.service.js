@@ -6,8 +6,8 @@ angular.module('public')
  * This is intended to be injected any time we need some user metadata
  * or to find out if the user is authenticated.
  **/
-CurrentUserService.$inject=['$cookies'];
-function CurrentUserService($cookies) {
+CurrentUserService.$inject=['$cookies', 'localStorageService'];
+function CurrentUserService($cookies, localStorageService) {
   var service = this;
   var _username = '';
   var _accessToken = '';
@@ -17,7 +17,7 @@ function CurrentUserService($cookies) {
    */
 
   service.isAuthenticated = function() {
-    _accessToken = $cookies.get('token');
+    _accessToken = localStorageService.get('token');
     return _accessToken;
   };
 }

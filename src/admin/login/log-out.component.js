@@ -4,11 +4,11 @@ angular.module('public')
 	controller: LogOutController,
 });
 
-LogOutController.$inject = ['$cookies', '$state', '$location','CurrentUserService'];
-function LogOutController($cookies, $state, $location, CurrentUserService) {
+LogOutController.$inject = ['$cookies', '$state', '$location','CurrentUserService', 'localStorageService'];
+function LogOutController($cookies, $state, $location, CurrentUserService, localStorageService) {
 	var $ctrl = this;
 	$ctrl.logOut = function() {
-		$cookies.remove('token');
+        localStorageService.remove('token');
 	    $location.path('/login'); 
 	};
 	$ctrl.isAuth = function() {

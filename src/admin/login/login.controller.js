@@ -1,8 +1,8 @@
 angular.module('public')
 .controller('LoginController', LoginController);
 
-LoginController.$inject = ['$state', 'LoginService', 'CurrentUserService', '$rootScope', '$cookies'];
-function LoginController($state, LoginService, CurrentUserService, $rootScope, $cookies) {
+LoginController.$inject = ['$state', 'LoginService', 'CurrentUserService', '$rootScope', '$cookies', 'localStorageService'];
+function LoginController($state, LoginService, CurrentUserService, $rootScope, $cookies, localStorageService) {
   var $ctrl = this;
   $ctrl.username = '';
   $ctrl.password = '';
@@ -18,7 +18,7 @@ function LoginController($state, LoginService, CurrentUserService, $rootScope, $
       if(!$state.params || !$state.params.toState) {
         var now = new Date();
         now.setDate(now.getDate()+7);
-        $cookies.put('token', accessToken, [{expires:now, path: '/'}]);
+        localStorageService.set('token', accessToken);
         $state.go('public.home');
       }
       else {

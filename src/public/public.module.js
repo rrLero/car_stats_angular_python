@@ -1,7 +1,7 @@
 /**
  * Public carStats application. Includes the common module and ui-router.
  */
-angular.module('public', ['ui.router', 'common', 'ngCookies'])
+angular.module('public', ['ui.router', 'common', 'ngCookies', 'LocalStorageModule'])
 .run(run);
 
 run.$inject = ['$rootScope', 'AuthRedirectorService']
