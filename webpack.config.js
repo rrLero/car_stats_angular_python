@@ -11,7 +11,7 @@ module.exports = {
         filename: "[name].bundle.js"
 
     },
-
+    devtool: "source-map",
     watch: true
 
 };

@@ -1,7 +1,6 @@
 "use strict";
 require('angular');
 require('angular-ui-router');
-require('angular-cookies');
 require('angular-local-storage');
 
 require('./src/carStats.module.js');

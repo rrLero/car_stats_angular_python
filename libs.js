@@ -6,3 +6,4 @@ global.jQuery = require('jquery');
 require('bootstrap');
 require('style-loader!css-loader!./css/style.css');
 
+

@@ -12,9 +12,8 @@ function AuthRedirectorService($state, CurrentUserService) {
    * to the next page.
    */
   service.onStateChangeStart = function(event, toState, toParams, fromState, fromParams) {
-    // Only redirect if going to any admin state,
+    // Only redirect if going to any public state,
     // unless going directly to login
-      console.log('yes');
     if (toState.name.indexOf('public.') === 0 &&
         toState.name != 'public.login' &&
         !CurrentUserService.isAuthenticated()) {
