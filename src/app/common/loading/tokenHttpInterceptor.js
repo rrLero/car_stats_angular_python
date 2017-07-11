@@ -12,16 +12,16 @@ function accessTokenHttpInterceptor(localStorageService) {
             var token=localStorageService.get('token');
             //set authorization header
             if (!$config.params) {
-                $config.params = {'token': token}
+                $config.params = {'token': token};
             } else {
-               $config.params.token=token; 
+               $config.params.token=token;
             }
-            
+
             return $config;
         },
         response: function(response) {
-            //if you get a token back in your response you can use 
-            //the response interceptor to update the token in the 
+            //if you get a token back in your response you can use
+            //the response interceptor to update the token in the
             //stored in the cookie
             if (response.data.token) {
                   //fetch token
@@ -39,4 +39,3 @@ function accessTokenHttpInterceptor(localStorageService) {
 
 
 //Assign to module
-

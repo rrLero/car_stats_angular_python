@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CarStats</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/common.css"> 
   </head>
   <body ng-app="carStats" ng-strict-di>
 
@@ -34,27 +32,27 @@
            <ul id="nav-list" class="nav navbar-nav navbar-right">
             <li id="dashDrops" ui-sref-active='active'>
               <a ui-sref="public.home">
-                <span class="glyphicon glyphicon-home"></span> Home 
+                <span class="glyphicon glyphicon-home"></span> Home
               </a>
               <hr class="visible-xs">
             </li>
             <li id="cars" ui-sref-active='active'>
-              <a ui-sref="public.carsList"> 
+              <a ui-sref="public.carsList">
                 <span class="glyphicon glyphicon-bed"></span> Cars
               </a>
               <hr class="visible-xs">
             </li>
             <li id="notes" ui-sref-active='active'>
-              <a ui-sref="public.notesList"> 
+              <a ui-sref="public.notesList">
                 <span class="glyphicon glyphicon-pencil"></span> Notes
               </a>
               <hr class="visible-xs">
             </li>
             <li id="logOut">
-            <logout></logout>              
+            <logout></logout>
             </li>
           </ul><!-- #nav-list -->
-        </div><!-- .collapse .navbar-collapse -->        
+        </div><!-- .collapse .navbar-collapse -->
       </div>
     </nav>
     </header>
@@ -63,7 +61,5 @@
         <h2>Loading Site...</h2>
       </div>
     </ui-view>
-      <script src="libs.bundle.js"></script>
-      <script src="public.bundle.js"></script>
   </body>
 </html>

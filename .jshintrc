@@ -1,0 +1,12 @@
+{
+    "esnext": true,
+    "node": true,
+    "predef": ["angular"],
+    "browser": true,
+    "undef": true,
+    "unused": false,
+    "curly": true,
+    "indent": 4,
+    "devel": true,
+    "eqeqeq": true
+}

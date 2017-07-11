@@ -1,6 +1,5 @@
-.gitignore
 .idea/
-car_stats_angular_python.tar.gz
+dist/
 node_modules/
 composer.json
 .babelrc
