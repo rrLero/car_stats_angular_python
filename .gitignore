@@ -1,0 +1,13 @@
+
+Будет удалено .babelrc
+Будет удалено .gitignore
+Будет удалено .idea/
+Будет удалено car_stats_angular_python.tar.gz
+Будет удалено css/bootstrap.min.css
+Будет удалено lib/restangular.js
+Будет удалено lib/restangular.min.js
+Будет удалено node_modules/
+.idea/
+node_modules/
+car_stats_angular_python.tar.gz
+composer.json
