@@ -1,8 +1,5 @@
-
-
-
 /**
- * Restaurant module that includes the public module as a dependency
+ * CarStat module that includes the public module as a dependency
  */
 angular.module('carStats', ['public'])
 .config(config);

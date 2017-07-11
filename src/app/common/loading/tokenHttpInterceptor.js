@@ -1,10 +1,10 @@
 //Create a http interceptor factory
-function accessTokenHttpInterceptor($cookies) {
+function accessTokenHttpInterceptor($cookies, localStorageService) {
     return {
         //For each request the interceptor will set the bearer token header.
         request: function($config) {
             //Fetch token from cookie
-            var token=$cookies.get('token');
+            var token=localStorageService.get('token');
             //set authorization header
             if (!$config.params) {
                 $config.params = {'token': token}
@@ -28,7 +28,7 @@ function accessTokenHttpInterceptor($cookies) {
         }
     };
 }
-accessTokenHttpInterceptor.$inject=['$cookies'];
+accessTokenHttpInterceptor.$inject=['$cookies', 'localStorageService'];
 
 //Register the http interceptor to angular config.
 function httpInterceptorRegistry($httpProvider) {
