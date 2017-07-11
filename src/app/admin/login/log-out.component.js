@@ -1,6 +1,6 @@
 angular.module('public')
 .component('logout', {
-	templateUrl: 'src/admin/login/logout.html',
+	templateUrl: 'src/app/admin/login/logout.html',
 	controller: LogOutController,
 });
 
@@ -9,7 +9,7 @@ function LogOutController($cookies, $state, $location, CurrentUserService) {
 	var $ctrl = this;
 	$ctrl.logOut = function() {
 		$cookies.remove('token');
-	    $location.path('/login'); 
+	    $location.path('/login');
 	};
 	$ctrl.isAuth = function() {
 		return Boolean(CurrentUserService.isAuthenticated())
