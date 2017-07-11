@@ -1,11 +1,8 @@
-module.exports = (function() {
-'use strict';
-
 angular.module('public')
 .controller('AddCarController', AddCarController);
 
 AddCarController.$inject = ['carsListService', '$location'];
-function AddCarController(carsListService) {
+function AddCarController(carsListService, $location) {
   var car = this;
   var newCar = {};
   car.submit = function() {
@@ -17,4 +14,3 @@ function AddCarController(carsListService) {
      carsListService.addNewCar(newCar);
   };
 }
-})();

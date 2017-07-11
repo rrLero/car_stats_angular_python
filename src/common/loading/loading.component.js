@@ -1,6 +1,3 @@
-module.exports = (function () {
-"use strict";
-
 angular.module('common')
 .component('loading', {
 	template: '<img src="images/spinner.svg" ng-if="$ctrl.show">',
@@ -21,8 +18,7 @@ function LoadingController($rootScope) {
 		listener();
 	};
 
-	function onSpinnerActivate(data) {
+	function onSpinnerActivate(event, data) {
 		$ctrl.show = data.on;
 	}
 }
-})();

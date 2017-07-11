@@ -1,6 +1,3 @@
-module.exports = (function() {
-"use strict";
-
 //Create a http interceptor factory
 function accessTokenHttpInterceptor($cookies) {
     return {
@@ -43,6 +40,4 @@ httpInterceptorRegistry.$inject=['$httpProvider'];
 angular
     .module('common')
     .config(httpInterceptorRegistry)
-    .factory('accessTokenHttpInterceptor', accessTokenHttpInterceptor)
-
-})();
+    .factory('accessTokenHttpInterceptor', accessTokenHttpInterceptor);

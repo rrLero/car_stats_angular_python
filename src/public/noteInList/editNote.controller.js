@@ -1,7 +1,3 @@
-module.exports = (function () {
-
-'use strict';
-
 angular.module('public')
 .controller('EditNoteController', EditNoteController);
 
@@ -29,6 +25,4 @@ function EditNoteController(notesListService, notes, id, cars) {
 		 };
 		 notesListService.editNote(updatedNote, id);
 	};
-
 }
-})();

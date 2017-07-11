@@ -1,6 +1,3 @@
-module.exports = (function() {
-'use strict';
-
 angular.module('common')
 .service('carsListService', carsListService);
 
@@ -18,14 +15,14 @@ function carsListService($http, ApiPath, $location, $log) {
 	service.removeCar = function(idCar) {
 		return $http.delete(ApiPath + '/car/' + idCar)
 					.then(function(response) {
-						$log.log(response.data.message);
+						$log.log(response.data);
 						return response.data
 					})
 	};
 	service.addNewCar = function(json) {
 		return $http.post(ApiPath + '/car', json)
 					.then(function(response) {
-						$log.log(response.data.message);
+						$log.log(response.data);
 						$location.url('/carsList');
 						return response.data
 					})
@@ -33,10 +30,9 @@ function carsListService($http, ApiPath, $location, $log) {
 	service.editCar = function(json, id) {
 		return $http.put(ApiPath + '/car/'+ id, json)
 					.then(function(response) {
-						$log.log(response.data.message);
+						$log.log(response.data);
 						$location.url('/carsList');
 						return response.data
 					})
 	};
 }
-})();

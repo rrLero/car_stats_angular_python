@@ -1,6 +1,3 @@
-module.exports = (function() {
-'use strict';
-
 angular.module('public')
 .controller('CarsController', CarsController);
 
@@ -23,4 +20,3 @@ function CarsController(carsListService, $log) {
 		}
 	} 
 }
-})();

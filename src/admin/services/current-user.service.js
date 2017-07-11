@@ -1,6 +1,3 @@
-module.exports = (function() {
-"use strict";
-
 angular.module('public')
 .service('CurrentUserService', CurrentUserService);
 
@@ -12,6 +9,7 @@ angular.module('public')
 CurrentUserService.$inject=['$cookies'];
 function CurrentUserService($cookies) {
   var service = this;
+  var _username = '';
   var _accessToken = '';
 
   /**
@@ -23,4 +21,3 @@ function CurrentUserService($cookies) {
     return _accessToken;
   };
 }
-})();

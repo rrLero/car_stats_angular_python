@@ -1,14 +1,10 @@
-module.exports = (function () {
-
-'use strict';
-
-
 angular.module('common')
 .service('notesListService', notesListService);
 
 notesListService.$inject = ['$http', 'ApiPath', '$location'];
 function notesListService($http, ApiPath, $location) {
 	var service = this;
+	var dif = (new Date).getTimezoneOffset()*60;
 
 	service.getNotesList = function () {
 		return $http.get(ApiPath + '/notes').then(function (response) {
@@ -19,7 +15,7 @@ function notesListService($http, ApiPath, $location) {
 	service.removeNote = function (idNote) {
 		return $http.delete(ApiPath + '/notes/' + idNote)
 					.then(function (response) {
-						console.log(response.data.message);
+						console.log(response.data);
 						return response.data
 					})			
 	};
@@ -40,7 +36,7 @@ function notesListService($http, ApiPath, $location) {
 	service.addNewNote = function (json, carId) {
 		return $http.post(ApiPath + '/notes/'+ carId, json)
 					.then(function (response) {
-						console.log(response.data.message);
+						console.log(response.data);
 						$location.url('/notesList');
 						return response.data
 					})
@@ -56,10 +52,9 @@ function notesListService($http, ApiPath, $location) {
 	service.editNote = function (json, id) {
 		return $http.put(ApiPath + '/notes/' + id, json)
 					.then(function (response) {
-						console.log(response.data.message);
+						console.log(response.data);
 						$location.url('/notesList');
 						return response.data
 					})
 	};
 }
-})();

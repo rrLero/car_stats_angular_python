@@ -1,5 +1,5 @@
-module.exports = (function() {
-"use strict";
+
+
 
 /**
  * Restaurant module that includes the public module as a dependency
@@ -14,4 +14,3 @@ function config($urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 }
 
-})();

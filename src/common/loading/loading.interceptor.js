@@ -1,6 +1,3 @@
-module.exports = (function() {
-"use strict";
-
 angular.module('common')
 .factory('loadingHttpInterceptor', LoadingHttpInterceptor);
 
@@ -44,5 +41,3 @@ function LoadingHttpInterceptor($rootScope, $q) {
     }
   };
 }
-
-})();
