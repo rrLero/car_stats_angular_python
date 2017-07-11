@@ -14,8 +14,8 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.5",
     "angular": "^1.6.5",
-    "angular-cookies": "^1.6.5",
     "angular-local-storage": "^0.6.0",
+    "angular-ui-router": "^0.3.2",
     "jquery": "^3.2.1"
   },
   "devDependencies": {

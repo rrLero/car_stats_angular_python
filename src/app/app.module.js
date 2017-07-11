@@ -2,6 +2,8 @@ import '../../css/common.css';
 import '../../css/style.css';
 import '../../css/public.css';
 
+import '../../images/spinner.svg';
+
 require('./carStats.module');
 require('./common/common.module');
 require('./public/public.module');

@@ -1,4 +1,3 @@
 import 'angular';
-import '@uirouter/angularjs';
-import 'angular-cookies';
+import 'angular-ui-router';
 import 'angular-local-storage';
