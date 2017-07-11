@@ -1,8 +1,8 @@
 angular.module('public')
 .controller('LoginController', LoginController);
 
-LoginController.$inject = ['$state', 'LoginService', 'CurrentUserService', '$rootScope', '$cookies', 'localStorageService'];
-function LoginController($state, LoginService, CurrentUserService, $rootScope, $cookies, localStorageService) {
+LoginController.$inject = ['$state', 'LoginService', 'CurrentUserService', '$rootScope', 'localStorageService'];
+function LoginController($state, LoginService, CurrentUserService, $rootScope, localStorageService) {
   var $ctrl = this;
   $ctrl.username = '';
   $ctrl.password = '';
