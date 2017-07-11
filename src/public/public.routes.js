@@ -1,6 +1,3 @@
-module.exports = (function() {
-'use strict';
-
 angular.module('public')
 .config(routeConfig);
 
@@ -13,7 +10,7 @@ function routeConfig ($stateProvider) {
   $stateProvider
     .state('public', {
       abstract: true,
-      templateUrl: 'src/public/public.html'
+      templateUrl: 'src/public/public.html',     
     })
     .state('public.home', {
       url: '/',
@@ -23,13 +20,13 @@ function routeConfig ($stateProvider) {
       url: '/carsList',
       templateUrl: 'src/public/carInList/car-in-list.html',
       controller: 'CarsController',
-      controllerAs: 'carsCtrl'
+      controllerAs: 'carsCtrl',
     })
     .state('public.notesList', {
       url: '/notesList',
       templateUrl: 'src/public/noteInList/note-in-list.html',
       controller: 'NotesController',
-      controllerAs: 'notesCtrl'
+      controllerAs: 'notesCtrl',
     })
     .state('public.oneCarNotes', {
       url: '/carsList/{id}/notes',
@@ -40,7 +37,7 @@ function routeConfig ($stateProvider) {
         notes: ['notesListService', '$stateParams', function (notesListService, $stateParams) {
           return notesListService.getOneCarNote($stateParams.id)
         }],
-        cars: ['carsListService', '$stateParams', function (carsListService) {
+        cars: ['carsListService', '$stateParams', function (carsListService, $stateParams) {
           return carsListService.getCarsList()
         }],
         id: ['$stateParams', function ($stateParams) {
@@ -52,7 +49,7 @@ function routeConfig ($stateProvider) {
       url: '/addCar',
       templateUrl: 'src/public/carInList/addCar.html',
       controller: 'AddCarController',
-      controllerAs: 'car'
+      controllerAs: 'car',
     })
     .state('public.addNotes', {
       url: '/addNote',
@@ -100,7 +97,6 @@ function routeConfig ($stateProvider) {
       url: '/login',
       templateUrl: 'src/admin/login/login.html',
       controller: 'LoginController',
-      controllerAs: '$ctrl'
+      controllerAs: '$ctrl',
     })
 }
-})();

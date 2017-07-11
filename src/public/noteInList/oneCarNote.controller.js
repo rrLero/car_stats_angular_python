@@ -1,7 +1,3 @@
-module.exports = (function () {
-
-'use strict';
-
 angular.module('public')
 .controller('OneCarNoteController', OneCarNoteController);
 
@@ -32,5 +28,3 @@ function OneCarNoteController(notes, notesListService, cars, id) {
 		return new Date(date2)
 	}
 }
-
-})();

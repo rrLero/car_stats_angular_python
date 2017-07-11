@@ -1,11 +1,8 @@
-module.exports = (function() {
-'use strict';
-
 angular.module('public')
 .controller('LoginController', LoginController);
 
 LoginController.$inject = ['$state', 'LoginService', 'CurrentUserService', '$rootScope', '$cookies'];
-function LoginController($state, LoginService, $cookies) {
+function LoginController($state, LoginService, CurrentUserService, $rootScope, $cookies) {
   var $ctrl = this;
   $ctrl.username = '';
   $ctrl.password = '';
@@ -44,5 +41,4 @@ function LoginController($state, LoginService, $cookies) {
                   $ctrl.message = response;
                 })
   }
-};
-})();
+}

@@ -1,12 +1,8 @@
-module.exports = (function () {
-
-'use strict';
-
 angular.module('public')
 .controller('NotesController', NotesController);
 
 NotesController.$inject = ['notesListService'];
-function NotesController(notesListService) {
+function NotesController(notesListService, title) {
 	var $ctrl = this;	
 
 	notesListService.getNotesList().then(function (response) {
@@ -30,5 +26,3 @@ function NotesController(notesListService) {
 		return new Date(date2)
 	}
 }
-
-})();

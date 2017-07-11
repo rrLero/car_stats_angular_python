@@ -1,12 +1,8 @@
-module.exports = (function () {
-
-"use strict";
-
 angular.module('public')
 .controller('AddNoteController', AddNoteController);
 
-AddNoteController.$inject = ['notesListService', '$location', 'cars'];
-function AddNoteController(notesListService, cars) {
+AddNoteController.$inject = ['notesListService', '$location', 'cars']
+function AddNoteController(notesListService, $location, cars) {
   var dif = (new Date).getTimezoneOffset()*60;
   var note = this;  
   var newNote = {};
@@ -23,4 +19,3 @@ function AddNoteController(notesListService, cars) {
      notesListService.addNewNote(newNote, note.car);
   };
 }
-})();
