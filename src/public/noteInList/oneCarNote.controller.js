@@ -1,9 +1,9 @@
-(function () {
+module.exports = (function () {
 
 'use strict';
 
 angular.module('public')
-.controller('OneCarNoteController', OneCarNoteController)
+.controller('OneCarNoteController', OneCarNoteController);
 
 OneCarNoteController.$inject = ['notes', 'notesListService', 'cars', 'id'];
 function OneCarNoteController(notes, notesListService, cars, id) {
@@ -24,7 +24,7 @@ function OneCarNoteController(notes, notesListService, cars, id) {
 						.then(function (response) {
 							$ctrl.notes=response
 						})
-	}
+	};
 	$ctrl.reFormat = function (date) {	
 		var date2 = new Date();
 		var dif = date2.getTimezoneOffset()*60;

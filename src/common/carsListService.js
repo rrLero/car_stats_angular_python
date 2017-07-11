@@ -1,4 +1,4 @@
-(function() {
+module.exports = (function() {
 'use strict';
 
 angular.module('common')
@@ -18,23 +18,23 @@ function carsListService($http, ApiPath, $location, $log) {
 	service.removeCar = function(idCar) {
 		return $http.delete(ApiPath + '/car/' + idCar)
 					.then(function(response) {
-						$log.log(response.data)
+						$log.log(response.data.message);
 						return response.data
 					})
 	};
 	service.addNewCar = function(json) {
 		return $http.post(ApiPath + '/car', json)
 					.then(function(response) {
-						$log.log(response.data)
-						$location.url('/carsList')
+						$log.log(response.data.message);
+						$location.url('/carsList');
 						return response.data
 					})
 	};
 	service.editCar = function(json, id) {
 		return $http.put(ApiPath + '/car/'+ id, json)
 					.then(function(response) {
-						$log.log(response.data)
-						$location.url('/carsList')
+						$log.log(response.data.message);
+						$location.url('/carsList');
 						return response.data
 					})
 	};

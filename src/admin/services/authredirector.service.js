@@ -1,4 +1,4 @@
-(function () {
+module.exports = (function () {
 "use strict";
 
 angular.module('public')
@@ -14,7 +14,7 @@ function AuthRedirectorService($state, CurrentUserService) {
    * the user is authenticated before letting them proceed
    * to the next page.
    */
-  service.onStateChangeStart = function(event, toState, toParams, fromState, fromParams) {
+  service.onStateChangeStart = function(event, toState, toParams) {
     // Only redirect if going to any admin state,
     // unless going directly to login
     if (toState.name.indexOf('public.') === 0 &&
@@ -29,6 +29,4 @@ function AuthRedirectorService($state, CurrentUserService) {
   };
 
 }
-
-
 })();

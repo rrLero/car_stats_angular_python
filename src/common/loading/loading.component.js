@@ -1,4 +1,4 @@
-(function () {
+module.exports = (function () {
 "use strict";
 
 angular.module('common')
@@ -21,10 +21,8 @@ function LoadingController($rootScope) {
 		listener();
 	};
 
-	function onSpinnerActivate(event, data) {
+	function onSpinnerActivate(data) {
 		$ctrl.show = data.on;
 	}
 }
-
-
 })();

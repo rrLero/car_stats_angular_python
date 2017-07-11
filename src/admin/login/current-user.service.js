@@ -1,4 +1,4 @@
-(function() {
+module.exports = (function() {
 'use strict';
 
 angular.module('public')

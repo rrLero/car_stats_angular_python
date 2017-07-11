@@ -1,16 +1,16 @@
-(function() {
+module.exports = (function() {
 'use strict';
 
 angular.module('public')
-.controller('EditCarController', EditCarController)
+.controller('EditCarController', EditCarController);
 
-EditCarController.$inject = ['carsListService', 'cars', 'id']
+EditCarController.$inject = ['carsListService', 'cars', 'id'];
 function EditCarController(carsListService, cars, id) {
 	var car = this;
 	var updatedCar;
 	cars = cars.filter(function(elem) {
 		return elem.id == id
-		})
+		});
 	car.gov_number = cars[0].gov_number;
 	car.car_type = cars[0].car_type;
 	car.gov_number_trailer = cars[0].gov_number_trailer;

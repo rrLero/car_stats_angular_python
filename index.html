@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CarStats</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/common.css"> 
   </head>
   <body ng-app="carStats" ng-strict-di>
-
       <!-- Fixed position loading indicator -->
     <loading class="loading-indicator"></loading>
-
     <header>
     <nav id="header-nav" class="navbar navbar-inverse">
       <div class="container">
@@ -58,53 +54,14 @@
       </div>
     </nav>    
     </header>
-
-
-    <ui-view>
+      <ui-view>
       <div class="text-center initial-loading">
         <h2>Loading Site...</h2>
       </div>
     </ui-view>
-    </div>
-
-
     <!-- Libs -->
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
-    <script src="lib/angular-ui-router.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="lib/angular-cookies.min.js"></script>   
-
-    <!-- Main Restaurant Module -->
-    <script src="src/carStats.module.js"></script>
-
-    <!-- Common Module -->
-    <script src="src/common/common.module.js"></script>
-    <script src="src/common/loading/loading.component.js"></script>
-    <script src="src/common/loading/loading.interceptor.js"></script>
-    <script src="src/common/carsListService.js"></script>
-    <script src="src/common/notesListService.js"></script>
-
-    <!-- Public Module -->
-    <script src="src/public/public.module.js"></script>
-    <script src="src/public/public.routes.js"></script>
-    <script src="src/public/carInList/cars.controller.js"></script>
-    <script src="src/public/noteInList/notes.controller.js"></script>
-    <script src="src/public/noteInList/oneCarNote.controller.js"></script>
-    <script src="src/public/carInList/addCarController.js"></script>
-    <script src="src/public/noteInList/addnote.controller.js"></script>
-    <script src="src/public/carInList/EditCarController.js"></script>
-    <script src="src/public/noteInList/editNote.controller.js"></script>
-    <!-- ADMIN SITE -->
-    <script src="src/admin/services/login.service.js"></script>
-    <script src="src/admin/login/login.controller.js"></script>
-    <script src="src/admin/login/current-user.service.js"></script> 
-    <script src="src/common/loading/tokenHttpInterceptor.js"></script> 
-    <script src="src/admin/services/authredirector.service.js"></script>
-    <script src="src/admin/services/current-user.service.js"></script>
-    <script src="src/admin/login/log-out.component.js"></script> 
-
-    <!--Application files -->
+    <script src="libs.bundle.js"></script>
+    <!-- MyJs -->
+    <script src="public.bundle.js"></script>
   </body>
 </html>

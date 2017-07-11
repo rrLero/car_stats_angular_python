@@ -1,11 +1,11 @@
-(function () {
+module.exports = (function () {
 
 'use strict';
 
 angular.module('public')
-.controller('EditNoteController', EditNoteController)
+.controller('EditNoteController', EditNoteController);
 
-EditNoteController.$inject = ['notesListService', 'notes', 'id', 'cars']
+EditNoteController.$inject = ['notesListService', 'notes', 'id', 'cars'];
 function EditNoteController(notesListService, notes, id, cars) {
 	var note = this;
 	var updatedNote;
