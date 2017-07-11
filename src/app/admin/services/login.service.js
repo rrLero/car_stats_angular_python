@@ -17,7 +17,7 @@ function LoginService($http, ApiPath, $rootScope, localStorageService, $state) {
   };
   service.getToken = function () {
     var token = localStorageService.get('token');
-    return token;
+    return token
   };
   service.createUser = function (username, password) {
     var params = {
@@ -26,9 +26,9 @@ function LoginService($http, ApiPath, $rootScope, localStorageService, $state) {
     };
     return $http.post(ApiPath + '/user', params)
                 .then(function (response) {
-                  return response.data.message;
+                  return response.data.message
                 }, function (resolve) {
                   return resolve.data.message;
                 });
-  };
+  }
 }

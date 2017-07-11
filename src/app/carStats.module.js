@@ -1,7 +1,7 @@
 /**
  * CarStat module that includes the public module as a dependency
  */
-angular.module('carStats', ['public'])
+angular.module('carStats', ['public', 'ui.router'])
 .config(config);
 
 config.$inject = ['$urlRouterProvider'];
