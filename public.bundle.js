@@ -45292,11 +45292,8 @@ angular.module('ngCookies').provider('$$cookieWriter', /** @this */ function $$C
 /* 112 */
 /***/ (function(module, exports) {
 
-
-
-
 /**
- * Restaurant module that includes the public module as a dependency
+ * CarStat module that includes the public module as a dependency
  */
 angular.module('carStats', ['public'])
 .config(config);
